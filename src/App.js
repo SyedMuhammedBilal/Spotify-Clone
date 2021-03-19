@@ -3,7 +3,7 @@ import Login from './components/Auth/Login'
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Login />
     </div>
   );
