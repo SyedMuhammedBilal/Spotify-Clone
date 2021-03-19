@@ -1,6 +1,8 @@
 import React from 'react'
 import Logo from '../../images/Vector.png'
 import styled from 'styled-components'
+import { redirect } from 'react-router-dom'
+import { accessUrl } from '../../API/SpotifyAuth'
 import './Login.css'
 
 const LoginButton = styled.button`
@@ -10,7 +12,7 @@ const LoginButton = styled.button`
     border: none;
     outline-width: 0;
     cursor: pointer;
-    color: white;
+    color: #fff;
     font-weight: 600;
     font-size: 16px;
     border-radius: 60px;
@@ -38,6 +40,11 @@ const LoginButton = styled.button`
         font-size: 17px;
         background-color: #23e065;    
     }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
 `
 
 function Login() {
@@ -49,10 +56,10 @@ function Login() {
             </div>
             {/* login button */}
             <div className="login__button">
-                <LoginButton> Login with Spotify </LoginButton>
+                <a href={accessUrl}> <LoginButton> Login with Spotify </LoginButton> </a> 
             </div>
         </div>
     )
-}
+};
 
 export default Login
