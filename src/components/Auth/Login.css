@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     height: 60vh;
+    flex-direction: column;
 }
 
 .login__logo img {
@@ -23,9 +24,38 @@
     align-items: center;
 }
 
+.login__terms {
+    margin-top: 4vh;
+    font-size: 11px;
+}
+
+.login__terms-2 {
+    margin-top: 4vh;
+    font-size: 11px;
+    width: 36%;
+    text-align: center;
+}
+
+.login__terms a {
+    color: #1DB954;
+}
+
+.login__terms-2 a {
+    color: #1DB954;
+}
+
 @media (min-width: 200px) and (max-width: 500px) {
     .login__logo img {
         width: 55%;
+    }
+
+    .login__terms {
+        width: 70%;
+        text-align: center;
+    }
+
+    .login__terms-2 {
+        width: 77%;
     }
 }
 
@@ -33,10 +63,33 @@
     .login__logo img {
         width: 70%;
     }
+
+    .login__terms {
+        font-size: 15px;
+    }
+
+    .login__terms-2 {
+        font-size: 15px;
+        width: 50%;
+    }
 }
 
 @media (min-width: 1300px) {
+    .login__logo {
+        height: 55vh;
+    }
+
     .login__logo img {
         width: 70%;
+    }
+
+    .login__terms {
+        font-size: 18px;
+    }
+    
+    .login__terms-2 {
+        font-size: 18px;
+        margin-top: 2.5vh;
+        width: 28%;
     }
 }

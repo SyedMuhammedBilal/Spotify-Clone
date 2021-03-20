@@ -35,10 +35,8 @@ const LoginButton = styled.button`
     }
 
     &:hover {
-        width: 26vw;
-        height: 8vh;
-        font-size: 17px;
-        background-color: #23e065;    
+        background-color: #23e065;   
+        transition: .6s; 
     }
 
     a {
@@ -57,6 +55,12 @@ function Login() {
             {/* login button */}
             <div className="login__button">
                 <a href={accessUrl}> <LoginButton> Login with Spotify </LoginButton> </a> 
+            </div>
+            <div className="login__terms">
+                <p>By clicking on Log in, you agree to Spotify's <a href="https://www.spotify.com/us/legal/end-user-agreement/">Terms and Condition of Use.</a></p>
+            </div>
+            <div className="login__terms-2">
+                <p>To learn more about how Spotify collects, uses, shares and protects your personal data please read Spotify's <a href="https://www.spotify.com/us/legal/privacy-policy/">Privacy Policy.</a></p>
             </div>
         </div>
     )
