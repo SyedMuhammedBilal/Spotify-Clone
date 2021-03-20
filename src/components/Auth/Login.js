@@ -1,7 +1,6 @@
 import React from 'react'
 import Logo from '../../images/Vector.png'
 import styled from 'styled-components'
-import { redirect } from 'react-router-dom'
 import { accessUrl } from '../../API/SpotifyAuth'
 import './Login.css'
 
@@ -30,7 +29,7 @@ const LoginButton = styled.button`
     }
 
     @media(min-width: 1300px) {
-        font-size: 24px;
+        font-size: 18px;
         height: 5.5vh;
     }
 

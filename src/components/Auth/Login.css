@@ -84,12 +84,12 @@
     }
 
     .login__terms {
-        font-size: 18px;
+        font-size: 15px;
     }
     
     .login__terms-2 {
-        font-size: 18px;
+        font-size: 15px;
         margin-top: 2.5vh;
-        width: 28%;
+        width: 42%;
     }
 }
