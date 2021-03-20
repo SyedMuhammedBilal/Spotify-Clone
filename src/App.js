@@ -8,8 +8,7 @@ import { useDataLayerValue } from './store/index';
 const spotify = new SpotifyWebAPI();
 
 function App() {
-  const [token, setToken] = useState(null);
-  const [{ user }, dispatch] = useDataLayerValue();
+  const [{ user, token }, dispatch] = useDataLayerValue();
   // { user } is same as useDataLayerValue.user, just destructuring the value
 
   useEffect(() => {
@@ -19,7 +18,11 @@ function App() {
     const _token = hash.access_token
     
     if(_token) {
-      setToken(_token)
+      dispatch({
+        type: 'SET_TOKEN',
+        token: _token,
+      })
+
       spotify.setAccessToken(_token);
 
       spotify.getMe()
@@ -35,12 +38,13 @@ function App() {
       console.log(`TOKEN => ${_token}`);
   }, [])
   
-  console.log('user --->', user);
+  // console.log('user --->', user);
+  // console.log('token --->', token);
 
   return (
     <div>
       {
-        token ? <Player /> : <Login />
+        token ? <Player spotify={spotify} /> : <Login />
       }
     </div>
   );

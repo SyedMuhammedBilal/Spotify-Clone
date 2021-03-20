@@ -1,0 +1,9 @@
+.body {
+    flex: 0.8;
+    background: rgb(18,18,18);
+    background: linear-gradient(360deg, rgba(18,18,18,0.9934348739495799) 50%, rgba(26,52,50,1) 70%, rgba(33,102,95,1) 100%);
+}
+
+.body__date {
+    padding: 40px;
+}
