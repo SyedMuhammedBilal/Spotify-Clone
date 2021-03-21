@@ -8,7 +8,7 @@ import { useDataLayerValue } from './store/index';
 const spotify = new SpotifyWebAPI();
 
 function App() {
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  const [{ user, token, playlists }, dispatch] = useDataLayerValue();
   // { user } is same as useDataLayerValue.user, just destructuring the value
 
   useEffect(() => {
@@ -34,6 +34,15 @@ function App() {
             user: user
           })
         })
+
+        spotify.getUserPlaylists()
+          .then((playlists) => {
+            console.log('playlists ------>', playlists);
+            dispatch({
+              type: 'SET_PLAYLIST',
+              playlists: playlists
+            })
+          })
       }
       console.log(`TOKEN => ${_token}`);
   }, [])
