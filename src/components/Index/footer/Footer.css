@@ -28,6 +28,7 @@
     font-size: 14px;
     font-weight: 500;
     color: #fff;
+    margin-bottom: 5px;
 }
 
 .footer__songInfo p {
@@ -50,6 +51,12 @@
     color: rgb(160, 159, 159);
 }
 
+.footer__icon:hover,
+.footer__green:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.2) !important;
+}
+
 .footer__sideIcon {
     font-size: 35px;
 }
@@ -64,4 +71,13 @@
     align-items: center;
     justify-content: space-between;
     color: rgb(160, 159, 159);
+}
+
+.footer__right * .MuiSvgIcon-root {
+    font-size: 19px;
+}
+
+
+.footer__right * MuiSlider-root {
+    padding: 0;
 }

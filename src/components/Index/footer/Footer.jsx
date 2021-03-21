@@ -9,6 +9,7 @@ import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 // import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import DevicesIcon from '@material-ui/icons/Devices';
 import { Grid, Slider } from "@material-ui/core";
 import './Footer.css'
 
@@ -33,13 +34,16 @@ const Footer = () => {
             <div className="footer__right">
                 <Grid container spacing={2}>
                     <Grid item>
+                        <DevicesIcon />
+                    </Grid>
+                    <Grid item>
                         <PlaylistPlayIcon />
                     </Grid>
                     <Grid item>
                         <VolumeDownIcon />
                     </Grid>
                     <Grid item xs>
-                        <Slider style={{color: 'rgb(160, 159, 159)'}} />
+                        <Slider style={{color: 'rgb(160, 159, 159)', padding: 'inherit', width: '13vw'}} />
                     </Grid>
                 </Grid>
             </div>
