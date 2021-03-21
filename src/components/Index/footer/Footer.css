@@ -10,7 +10,7 @@
 }
 
 .footer__left {
-    flex: 0.3;
+    flex: 0.2;
     color: rgb(160, 159, 159);
     display: flex;
     align-items: center;
@@ -42,23 +42,65 @@
 }
 
 .footer__center {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    flex-direction: column;
     flex: 0.4;
+}
+
+.footer__controlOptions {
     padding: 0 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 250px;
-    color: rgb(160, 159, 159);
+    /* max-width: 250px; */
+    color: rgb(160, 159, 159);   
 }
 
-.footer__icon:hover,
-.footer__green:hover {
+.footer__playback {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.playback__timer {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.footer__playback p {
+    font-size: 11px;
+}
+
+.footer__icon {
+    color: rgb(160, 159, 159);
+    font-size: 20px;
+}
+
+.footer__green {
+    font-size: 20px;
+}
+
+.footer__playButton:hover { 
     transition: transform 0.2s ease-in-out;
     transform: scale(1.2) !important;
 }
 
+.footer__sideIcon:hover {
+    color: #fff;
+}
+
+.footer__icon:hover {
+    color: #fff;
+}
+
+.footer__green:hover {
+    color: #fff;
+}
+
 .footer__sideIcon {
-    font-size: 35px;
+    font-size: 18px;
 }
 
 .footer__playButton {
@@ -66,7 +108,7 @@
 }
 
 .footer__right {
-    flex: 0.3;
+    flex: 0.2;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,9 +117,14 @@
 
 .footer__right * .MuiSvgIcon-root {
     font-size: 19px;
+    color: grey;
 }
 
+.footer__volume {
+    color: rgb(160, 159, 159);
+}
 
-.footer__right * MuiSlider-root {
+.footer__right * .MuiSlider-root:hover {
+    color: #1DB954;
     padding: 0;
 }

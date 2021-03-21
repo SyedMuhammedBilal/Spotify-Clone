@@ -11,6 +11,7 @@ import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import DevicesIcon from '@material-ui/icons/Devices';
 import { Grid, Slider } from "@material-ui/core";
+import Playback from './Playback'
 import './Footer.css'
 
 const Footer = () => {
@@ -25,11 +26,24 @@ const Footer = () => {
                 <FavoriteIcon className="footer_likeButton" style={{fontSize: '18px'}} />
             </div>
             <div className="footer__center">
-                <ShuffleIcon className="footer__green footer__sideIcon" />
-                <SkipPreviousIcon className="footer__icon footer__sideIcon" />
-                <PlayCircleFilledWhiteIcon fontSize="large" style={{color: '#fff'}} className="footer__icon footer__playButton" />
-                <SkipNextIcon className="footer__icon footer__sideIcon" />
-                <RepeatIcon className="footer__green footer__sideIcon" />
+                <div className="footer__controlOptions">
+                    <ShuffleIcon className="footer__green footer__sideIcon" style={{fontSize: '20px'}} />
+                    <SkipPreviousIcon style={{color: 'rgb(160, 159, 159)', fontSize: '20px'}} className="footer__icon" />
+                    <PlayCircleFilledWhiteIcon fontSize="large" style={{color: '#fff', fontSize: '40px'}} className="footer__icon footer__playButton" />
+                    <SkipNextIcon style={{color: 'rgb(160, 159, 159)', fontSize: '20px'}} className="footer__icon" />
+                    <RepeatIcon className="footer__green footer__sideIcon" style={{fontSize: '20px'}} />
+                </div>
+                <div className="footer__playback">
+                    <div className="playback__timer">
+                        <p>0:00</p>
+                    </div>
+                    <Slider
+                        style={{color: 'rgb(160, 159, 159)'}}
+                    />
+                    <div className="playback__timer">
+                        <p>0:00</p>
+                    </div>
+                </div>
             </div>
             <div className="footer__right">
                 <Grid container spacing={2}>
@@ -43,7 +57,7 @@ const Footer = () => {
                         <VolumeDownIcon />
                     </Grid>
                     <Grid item xs>
-                        <Slider style={{color: 'rgb(160, 159, 159)', padding: 'inherit', width: '13vw'}} />
+                        <Slider className="footer__volume" style={{color: 'rgb(160, 159, 159)', padding: 'inherit', width: '80%'}} />
                     </Grid>
                 </Grid>
             </div>
