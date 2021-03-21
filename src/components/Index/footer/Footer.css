@@ -11,6 +11,33 @@
 
 .footer__left {
     flex: 0.3;
+    color: rgb(160, 159, 159);
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.footer__albumLogo {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    margin-right: 20px;
+} 
+
+.footer__songInfo h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.footer__songInfo p {
+    font-size: 12px;
+    color: rgb(160, 159, 159);
+}
+
+.footer_likeButton {
+    padding-left: 15px;
+    color: #1DB954;
 }
 
 .footer__center {
@@ -20,8 +47,21 @@
     align-items: center;
     justify-content: space-between;
     max-width: 250px;
+    color: rgb(160, 159, 159);
+}
+
+.footer__sideIcon {
+    font-size: 35px;
+}
+
+.footer__playButton {
+    font-size: 50px;
 }
 
 .footer__right {
     flex: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(160, 159, 159);
 }
