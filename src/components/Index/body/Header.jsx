@@ -53,11 +53,11 @@ const Header = () => {
                 </div>
             </div>
             <div className="header__right">
-                <div className="header__profileSection">
+                <div onClick={showDropdown} className="header__profileSection">
                     <StyledAvatar src={user?.images[0]?.url} alt="profile" />
                     {/* <h4> {user?.display_name} </h4> */}
                     <h4> Syed Muhammed Bilal </h4>
-                    {dropdown === false ? <ArrowDropDownIcon onClick={showDropdown} /> : <ArrowDropUpIcon onClick={showDropdown} />}
+                    {dropdown === false ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}
                 </div>
                 {dropdown && <div className="header__dropdown">
                     <h4>Account</h4>
