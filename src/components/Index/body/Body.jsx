@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import Header from './Header'
 import './Body.css'
 
-const Body = () => {
+const Body = ({ spotify }) => {
     const today = new Date();
     const currentHour = today.getHours();
 
@@ -19,9 +20,10 @@ const Body = () => {
 
     return (
         <div className="body">
+            <Header spotify={spotify} />
             <div className="body__date">
                 <h1>{date}</h1>
-            </div>
+            </div>  
         </div>
     )
 }
