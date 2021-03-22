@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Header from './Header'
+import Cards from '../../cards/Cards'
 import './Body.css'
 
 const Body = ({ spotify }) => {
@@ -21,11 +22,14 @@ const Body = ({ spotify }) => {
     return (
         <div className="body">
             <Header spotify={spotify} />
-            <div className="body__date">
-                <h1>{date}</h1>
-            </div>  
+            <div className="body__content">
+                <div className="body__date">
+                    <h1>{date}</h1>
+                </div>  
+                <Cards />
+            </div>
         </div>
     )
-}
+};
 
 export default Body

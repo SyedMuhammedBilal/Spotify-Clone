@@ -62,11 +62,9 @@ const Header = () => {
                 {dropdown && <div className="header__dropdown">
                     <h4>Account</h4>
                     <hr />
-                    <h4 onClick={loginPage}>Logout</h4>
+                    <h4 onClick={loginPage}>Log out</h4>
                 </div>}
-                
             </div>
-            
         </div>
     )
 }

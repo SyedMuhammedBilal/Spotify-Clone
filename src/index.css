@@ -9,7 +9,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background: linear-gradient(360deg, rgba(18,18,18,0.9934348739495799) 50%, rgba(26,52,50,1) 70%, rgba(33,102,95,1) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
 }
 
