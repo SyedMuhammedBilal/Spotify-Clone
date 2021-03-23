@@ -21,6 +21,7 @@ const StyledAvatar = withStyles({
 const Header = () => {
     const [{ user }, dispatch] = useDataLayerValue();
     const [dropdown, setDropdown] = useState(false);
+    console.log('uuusss------->', user);
 
     let history = useHistory();
 
