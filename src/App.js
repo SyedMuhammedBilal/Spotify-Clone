@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Login from './components/Auth/Login'
 import { getTokenFromURL } from './API/SpotifyAuth'
 import Player from './components/Index/Player'
+import Card from './components/cards/Cards'
 import SpotifyWebAPI from 'spotify-web-api-js'
 import { useDataLayerValue } from './store/index';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 const spotify = new SpotifyWebAPI();
 
@@ -67,7 +70,7 @@ function App() {
           album04: album
         })
       })
-
+      
         spotify.getUserPlaylists()
           .then((playlists) => {
             console.log('playlists ------>', playlists.items.track);
@@ -89,14 +92,20 @@ function App() {
   console.log('rec3----', album03);
   console.log('rec4----', album04);
   console.log('playlist ---> ', playlists);
-
+  const PR = <Player spotify={spotify} />
   return (
-    <div>
-      {
+    <Router>
+      {/* {
         token ? <Player spotify={spotify} /> : <Login />
-      }
-    </div>
+      } */}
+      <Switch>  
+        {token ? 
+          <Route exact="/" render={() => <Player spotify={spotify} />} /> : 
+          <Route exact="/" component={Login} />}
+      </Switch>
+    </Router>
   );
 };
+
 
 export default App;

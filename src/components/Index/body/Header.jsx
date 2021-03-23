@@ -44,12 +44,12 @@ const Header = () => {
             <div className="header__left">
                 <div className="header__arrow">
                     <div className="arrow__section">
-                        <ArrowBackIosIcon onClick={goBack} />
+                        <ArrowBackIosIcon style={{cursor: 'pointer'}} onClick={goBack} />
                     </div>
                 </div>
                 <div className="header__arrow">
                     <div className="arrow__section">
-                        <ArrowForwardIosIcon />
+                        <ArrowForwardIosIcon style={{cursor: 'pointer'}} />
                     </div>
                 </div>
             </div>

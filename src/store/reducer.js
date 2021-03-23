@@ -3,12 +3,16 @@ export const initialState = {
     playlists: [],
     playing: false,
     item: null,
-    album01: null ,
-    album02: null ,
-    album03: null ,
-    album04: null ,
+    album01: null,
+    album02: null,
+    album03: null,
+    album04: null,
+    album01_track: null,
+    album02_track: null,
+    album03_track: null,
+    album04_track: null,
     // temporary token, remove it after development
-    // token: "BQDsBA3ysa1mnjVlBK-i7EH9sAGwYyRNzLM9bKGXxzH3o8Z-tu-epZc6zUGEXhdKtgGP3EEmBpA9r7Jxt8g3cz1x5-ASzwzdtGrP0Zfp-V5YAiJKQHkHxYeytXfgxo5zfhcGAgskLTSsueCjjv-QIZypw9h0gfIb5JQsJ2BKKBfwLwDX4k9Q"
+    // token: "BQAQBfgT_VdSHhWGOoNJAfd5vKzT8LjPCBEi2WsyA6HGXF3xjcpnzvJ-2bK4ZvGhu0ghZAYjsoZ6jLkbiSiQI9YqsRJl29_DKmzRwpprGvYMLjL6PW1vqiFpv-_DIo127pFFwnA5rJtvmH14T9tYrrIzCSNC7YDYIcLYlZTkBWCnXRtd5amE"
 };
 
 const reducer = (state, action) => {
@@ -49,6 +53,26 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 album04: action.album04
+            }
+        case "SET_ALBUM_TRACK_01":
+            return {
+                ...state,
+                album01_track: action.album01_track
+            }
+        case "SET_ALBUM_TRACK_02":
+            return {
+                ...state,
+                album02_track: action.album02_track
+            }
+        case "SET_ALBUM_TRACK_03":
+            return {
+                ...state,
+                album03_track: action.album03_track
+            }
+        case "SET_ALBUM_TRACK_04":
+            return {
+                ...state,
+                album04_track: action.album04_track
             }
         default: 
             return state           

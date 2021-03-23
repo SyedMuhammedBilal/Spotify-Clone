@@ -10,6 +10,7 @@ $greyHover: #222222;
     // margin: 4px;
     .card {
         background-color: $greyLighter;
+        position: relative;
         border-radius: 6px;
         width: 185px;
         height: 270px;
@@ -26,7 +27,7 @@ $greyHover: #222222;
             img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: fil;
             }
         }
         .cardContent {
@@ -35,6 +36,10 @@ $greyHover: #222222;
                 font-weight: 600;
                 font-size: 1rem;
                 padding-bottom: 06px;
+                width: 11.5rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
             p {
                 color: rgb(160, 159, 159);
@@ -44,6 +49,29 @@ $greyHover: #222222;
         &:hover {
             background-color: $greyHover;
             transition: 0.3s ease-in-out;
+            .playIcon {
+                overflow: hidden;
+                display: flex;
+                position: absolute;
+                right: 25px;
+                bottom: 100px;
+                padding: 0.8rem;
+                background: #1DB954;
+                width: 10px;
+                height: 10px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50px;
+                color: #fff;
+                transition: 0.2s ease-out;
+                
+                &:hover {
+                    padding: 0.85rem;
+                    width: 10.5px;
+                    height: 10.5px;
+
+                }
+            }
         }
     }
 
@@ -51,3 +79,8 @@ $greyHover: #222222;
         width: 69vw;
     }
 }
+
+.playIcon {
+    color: $greyLighter;
+}
+
