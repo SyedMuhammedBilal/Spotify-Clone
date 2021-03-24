@@ -101,12 +101,19 @@
     display: flex;
     align-items: center;
     color: white;
+    position: relative;
 
+    
     &:hover {
         cursor: pointer;
         background-color: #000;
-        opacity: 0.8;
         border-radius: 06px;
+        opacity: 0.1;
+        &::before {
+            z-index: -1;
+            content: '';
+            position: absolute;
+        }
     }   
 
     .songRow__info {

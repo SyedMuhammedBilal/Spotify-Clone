@@ -28,8 +28,8 @@ const Body = ({ spotify }) => {
                 <div className="body__date">
                     <h1>{date}</h1>
                 </div>  
-                {/* <Cards /> */}
-                <Tracks />
+                <Cards />
+                {/* <Tracks /> */}
             </div>
         </div>
     )

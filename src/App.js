@@ -5,13 +5,15 @@ import Player from './components/Index/Player'
 import Card from './components/cards/Cards'
 import SpotifyWebAPI from 'spotify-web-api-js'
 import { useDataLayerValue } from './store/index';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from 'react-router-dom';
+import Tracks from './pages/TrackList'
 
 const spotify = new SpotifyWebAPI();
 
 function App() {
   const [{ user, token, playlists, album01, album02, album03, album04 }, dispatch] = useDataLayerValue();
+  const [log, setLog] = useState(true);
+  const history = useHistory();
   // { user } is same as useDataLayerValue.user, just destructuring the value
 
   useEffect(() => {
@@ -26,7 +28,9 @@ function App() {
         token: _token,
       })
 
+
       spotify.setAccessToken(_token);
+
 
       spotify.getMe()
         .then((user) => {
@@ -70,7 +74,7 @@ function App() {
           album04: album
         })
       })
-      
+
         spotify.getUserPlaylists()
           .then((playlists) => {
             console.log('playlists ------>', playlists.items.track);
@@ -84,7 +88,8 @@ function App() {
   }, [])
 
   console.log('user --->', user);
-  // console.log('token --->', token);
+  console.log('token --->', token);
+
   // const filtered = [...new Set(recentlyPlayed.items.map(item => item.track.albumName))]
   // console.log('filtered------>',filtered);
   console.log('rect1----', album01);
@@ -92,20 +97,35 @@ function App() {
   console.log('rec3----', album03);
   console.log('rec4----', album04);
   console.log('playlist ---> ', playlists);
-  const PR = <Player spotify={spotify} />
+  // const PR = <Player spotify={spotify} />
+
+
   return (
-    <Router>
+    <Router history={history}>
       {/* {
         token ? <Player spotify={spotify} /> : <Login />
       } */}
       <Switch>  
-        {token ? 
-          <Route exact="/" render={() => <Player spotify={spotify} />} /> : 
-          <Route exact="/" component={Login} />}
+          <Route exact path="/" render={() => token ? <Player spotify={spotify} /> : <Login />} />
+          <Route exact path="/album" render={() => token ? <Tracks /> : <Player spotify={spotify} />} />
+          {/* <PrivateRoute exact token={token} path="/#" component={Tracks} /> */}
       </Switch>
     </Router>
   );
 };
+
+const PrivateRoute = ({ component: Component, token, path, ...rest }) => {
+  return (
+    <Route
+    path={path}
+      {...rest}
+      render={(props) => token ?
+        <Component {...props} />
+        : <Redirect to={{pathName: '/'}} />
+      }
+    />
+  )
+}
 
 
 export default App;
