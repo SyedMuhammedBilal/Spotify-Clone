@@ -107,7 +107,7 @@ function App() {
       } */}
       <Switch>  
           <Route exact path="/" render={() => token ? <Player spotify={spotify} /> : <Login />} />
-          <Route exact path="/album" render={() => token ? <Tracks /> : <Player spotify={spotify} />} />
+          <Route path="/album/:id" render={() => token ? <Tracks /> : <Player spotify={spotify} />} />
           {/* <PrivateRoute exact token={token} path="/#" component={Tracks} /> */}
       </Switch>
     </Router>

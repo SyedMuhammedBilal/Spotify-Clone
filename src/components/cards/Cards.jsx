@@ -23,7 +23,9 @@ const Cards = () => {
             
             {data?.map((dat) => {
                 return (
-                    <SongCard key={dat?.id} artistName={dat} image={dat} albumName={dat} /> 
+                    <Link style={{textDecoration: 'none', color: '#fff'}} to={`/album/${dat?.id}`} >
+                        <SongCard key={dat?.id} artistName={dat} image={dat} albumName={dat} /> 
+                    </Link>
                 )
             })}
             </div>  
@@ -35,9 +37,7 @@ const SongCard = ({ albumName, artistName, image }) => {
     return (
         <div className="card">
             <div className="cardImage">
-                <Link to="/album">
                 <img loading="lazy" src={image?.images[0].url} alt="album" />
-                </Link>
             </div>
             <div className="cardContent">
                 <h3> {albumName?.name} </h3>
