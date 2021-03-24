@@ -3,6 +3,10 @@
     height: 100vh;
 }
 
+.body::-webkit-scrollbar {
+    display: none;
+}
+
 .body__content {
     margin-left: 18rem;
     margin-top: 6rem;
@@ -11,4 +15,11 @@
 .body__date {
     /* padding-top: 10px; */
     margin-bottom: 20px;
+}
+
+.body__date p {
+    color: rgb(160, 159, 159);
+    margin-top: 4px; 
+    font-weight: 600;
+    font-size: 14.5px;  
 }

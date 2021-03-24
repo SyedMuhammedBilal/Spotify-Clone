@@ -14,7 +14,7 @@ import { Grid, Slider } from "@material-ui/core";
 import Playback from './Playback'
 import './Footer.css'
 
-const Footer = () => {
+const Footer = ({ spotify }) => {
     return (
         <div className="footer">
             <div className="footer__left">

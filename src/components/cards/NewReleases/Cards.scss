@@ -1,19 +1,21 @@
 $greyLighter: #181818;
 $greyHover: #222222;
 
-.cardsWrap {
+.cardsWrap3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 74.5vw;
+    height: 20rem;
+    overflow: hidden;
+    width: 75.5vw;
     // margin: 4px;
-    .card {
+    .card3 {
         background-color: $greyLighter;
         position: relative;
         border-radius: 6px;
         width: 185px;
-        height: 270px;
+        height: 258px;
         margin-bottom: 4vh;
         // margin-left: 2px;
         // margin-right: 2px;
@@ -21,16 +23,17 @@ $greyHover: #222222;
         padding: 18px;
         cursor: pointer;
         box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);
-        .cardImage {
+        .cardImage3 {
             height: 200px;
-            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);
+            // box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);
             img {
                 width: 100%;
-                height: 100%;
-                object-fit: fil;
+                height: 92%;
+                object-fit: fill;
+                border-radius: 100px;
             }
         }
-        .cardContent {
+        .cardContent3 {
             padding: 1rem 0;
             h3 {
                 font-weight: 600;
@@ -49,7 +52,7 @@ $greyHover: #222222;
         &:hover {
             background-color: $greyHover;
             transition: 0.3s ease-in-out;
-            .playIcon {
+            .playIcon3 {
                 overflow: hidden;
                 display: flex;
                 position: absolute;
@@ -79,7 +82,7 @@ $greyHover: #222222;
     }
 }
 
-.playIcon {
+.playIcon3 {
     color: $greyLighter;
 }
 

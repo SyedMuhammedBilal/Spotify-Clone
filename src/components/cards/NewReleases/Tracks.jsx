@@ -30,16 +30,20 @@ const Tracks = ({ spotify }) => {
     const [{album01, 
         album02, 
         album03, 
-        album04}, dispatch] = useDataLayerValue();
+        album04,
+        new_releases
+    }, dispatch] = useDataLayerValue();
     const [minSec, setMinSec] = useState(null);
     let { id } = useParams()
     
-    const param = [album01, 
-        album02, 
-        album03, 
-        album04]
+    // const param = [album01, 
+    //     album02, 
+    //     album03, 
+    //     album04,
+    //     new_releases
+    // ]
     
-    const data = param
+    const data = new_releases
     console.log('datatatata-----', data);
 
     const playSong = (id) => {
@@ -66,7 +70,7 @@ const Tracks = ({ spotify }) => {
 
     return (
         <React.Fragment>
-            {data?.filter(card => card.id === id).map((dat, index) => {
+            {data?.albums?.items?.filter(card => card.id === id).map((dat, index) => {
             const date = dat?.release_date.substring(0, 4)
                 return (
                     <div key={index}>

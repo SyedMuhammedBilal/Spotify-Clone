@@ -28,7 +28,6 @@ function App() {
         token: _token,
       })
 
-
       spotify.setAccessToken(_token);
 
 
@@ -75,6 +74,21 @@ function App() {
         })
       })
 
+      spotify.getMyTopArtists().then(response => {
+        console.log('tooppppp', response);
+        dispatch({
+          type: "SET_TOP_ARTISTS",
+          top_artists: response
+        })
+      })
+
+      spotify.getNewReleases().then(res => {
+        console.log('arataratarta=====', res);
+        dispatch({
+          type: "SET_NEW_RELEASES",
+          new_releases: res
+        })
+      })
         spotify.getUserPlaylists()
           .then((playlists) => {
             console.log('playlists ------>', playlists.items.track);
