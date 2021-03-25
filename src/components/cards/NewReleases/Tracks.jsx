@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Avatar } from "@material-ui/core";
 import { withStyles } from '@material-ui/core/styles';
 import { useDataLayerValue } from '../../../store/index'
@@ -26,13 +26,12 @@ const BorderHeart = withStyles({
     }
 })(FavoriteBorderIcon)
 
-const Tracks = ({ spotify }) => {
-    const [{album01, 
-        album02, 
-        album03, 
-        album04,
-        new_releases
-    }, dispatch] = useDataLayerValue();
+const Tracks = ({ spotify, album }) => {
+    // const [data, setData] = useState(null);
+
+    const [{ released_album }, dispatch] = useDataLayerValue();
+    
+    const [loading, setLoading] = useState(true);
     const [minSec, setMinSec] = useState(null);
     let { id } = useParams()
     
@@ -43,35 +42,47 @@ const Tracks = ({ spotify }) => {
     //     new_releases
     // ]
     
-    const data = new_releases
-    console.log('datatatata-----', data);
 
-    const playSong = (id) => {
-        spotify?.play({
-            uris: [`spotify:track:${id}`],
-        })
-        .then((res) => {
-            spotify.getMyCurrentPlayingTrack().then((r) => {
-                dispatch({
-                    type: "SET_ITEM",
-                    item: r.item,
-                })
-                console.log('rrrrrrrrrrrrrr',r);
-                dispatch({
-                    type: "SET_PLAYING",
-                    playing: true
-                })
-            })
-        })
-    }
+    // useEffect(() => {
+    //     const delay = setTimeout(() => {
+    //         setLoading(false);
+    //         console.log(data);
+    //     }, 2000)
+
+    //     return () => clearTimeout(delay);
+    // }, [data])
     
+    console.log('chec---TTREAACKK-----', released_album);
+
+    // const playSong = (id) => {
+    //     spotify?.play({
+    //         uris: [`spotify:track:${id}`],
+    //     })
+    //     .then((res) => {
+    //         spotify.getMyCurrentPlayingTrack().then((r) => {
+    //             dispatch({
+    //                 type: "SET_ITEM",
+    //                 item: r.item,
+    //             })
+    //             console.log('rrrrrrrrrrrrrr',r);
+    //             dispatch({
+    //                 type: "SET_PLAYING",
+    //                 playing: true
+    //             })
+    //         })
+    //     })
+    // }
+
+    
+    const data = [released_album]
+
     if(!data)
     return (<h2> Not found </h2>);
 
     return (
         <React.Fragment>
-            {data?.albums?.items?.filter(card => card.id === id).map((dat, index) => {
-            const date = dat?.release_date.substring(0, 4)
+            {data?.map((dat, index) => {
+            const date = dat?.release_date?.substring(0, 4)
                 return (
                     <div key={index}>
                         <div className="body__info">
@@ -112,7 +123,7 @@ const Tracks = ({ spotify }) => {
                                     var seconds = ((item?.duration_ms % 60000) / 1000).toFixed(0);
                                     const result = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
                                 return (
-                                    <div className="songRow" onClick={() => playSong(item?.id)}>
+                                    <div className="songRow">
                                         <h5> {item?.track_number} </h5>
                                         <div className="songRow__info">
                                             <h1> {item?.name} </h1>

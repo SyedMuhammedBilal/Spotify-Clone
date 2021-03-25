@@ -7,6 +7,7 @@ import SpotifyWebAPI from 'spotify-web-api-js'
 import { useDataLayerValue } from './store/index';
 import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Tracks from './pages/TrackList'
+import Tracks2 from './components/cards/NewReleases/TrackList'
 
 const spotify = new SpotifyWebAPI();
 
@@ -89,6 +90,7 @@ function App() {
           new_releases: res
         })
       })
+
         spotify.getUserPlaylists()
           .then((playlists) => {
             console.log('playlists ------>', playlists.items.track);
@@ -122,6 +124,7 @@ function App() {
       <Switch>  
           <Route exact path="/" render={() => token ? <Player spotify={spotify} /> : <Login />} />
           <Route path="/album/:id" render={() => token ? <Tracks /> : <Player spotify={spotify} />} />
+          <Route path="/new_releases/:id" render={() => token ? <Tracks2 /> : <Player spotify={spotify} />} />
           {/* <PrivateRoute exact token={token} path="/#" component={Tracks} /> */}
       </Switch>
     </Router>

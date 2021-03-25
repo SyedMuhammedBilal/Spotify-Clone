@@ -39,7 +39,7 @@ const Body = ({ spotify }) => {
                     <h1> New releases for you </h1>
                     <p> Brand new music from artists you love.</p>
                 </div> 
-                <Cards3 />
+                <Cards3 spotify={spotify} />
                 {/* <Tracks /> */}
             </div>
         </div>

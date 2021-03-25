@@ -5,22 +5,39 @@ import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite'
 import { withStyles } from '@material-ui/core/styles';
 import { ReactComponent as PlayIcon } from '../../../svgs/PlayIcon.svg'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Track from './Tracks'
 
-const Cards = () => {
+const Cards = ( {spotify} ) => {
     const [{
-        new_releases
+        new_releases,
+        released_album
     }, dispatch] = useDataLayerValue();
     
     let data = new_releases
     console.log('newnewnew ==--==--==--',data);
+    // console.log('phatphatphat', released_album);
+
     return (
         <>
            <div className="cardsWrap3">
             {/* {console.log(JSON.stringify([recentlyPlayed.items])) */}
             
             {data?.albums?.items?.map((item) => {
+                const getAlbum = (id) => {
+                    spotify.getAlbum(id).then(album => {
+                        // zayn icarus
+                        console.log('check-RA--->', album);
+                        dispatch({
+                            type: 'SET_RELEASED_ALBUM',
+                          released_album: album
+                        })
+                    })
+                }
+                const getTracks = <Track album={released_album} />
+
+
                 return (
-                    <Link style={{textDecoration: 'none', color: '#fff'}} to={`/album/${item?.id}`} >
+                    <Link onClick={() => getAlbum(item?.id)}  style={{textDecoration: 'none', color: '#fff'}} to={`/new_releases/${item?.id}`} >
                         <SongCard key={item?.id} artistName={item} image={item} albumName={item} /> 
                     </Link>
                 )
