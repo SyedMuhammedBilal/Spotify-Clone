@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    width: 75.5vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center;
+
+
+    .category {
+        // width: 360px;
+        // height: 360px;
+        width: 220px;
+        height: 220px;
+        margin-bottom: 4vh;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            border-radius: 14px;
+        }
+
+        .category__content {
+            position: relative;
+            // top: 120px;
+            padding-left: 20px;
+            bottom: 205px;
+
+            h5 {
+                color: white;
+                font-weight: 700;
+                font-size: 21px;
+            }
+        }
+    }
+}

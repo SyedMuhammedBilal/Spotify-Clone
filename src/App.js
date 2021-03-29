@@ -7,6 +7,7 @@ import SpotifyWebAPI from 'spotify-web-api-js'
 import { useDataLayerValue } from './store/index';
 import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Tracks from './pages/TrackList'
+import Search from './pages/Search'
 import Tracks2 from './components/cards/NewReleases/TrackList'
 import Tracks3 from './components/cards/RecentlyPlayed/Track'
 import NewTrackList from './components/cards/NewReleases/TrackBody'
@@ -14,7 +15,7 @@ import NewTrackList from './components/cards/NewReleases/TrackBody'
 const spotify = new SpotifyWebAPI();
 
 function App() {
-  const [{ user, token, playlists, album01, album02, album03, album04, followed_artists, artist }, dispatch] = useDataLayerValue();
+  const [{ user, token, playlists, album01, album02, album03, album04, followed_artists, artist, categories }, dispatch] = useDataLayerValue();
   const [log, setLog] = useState(true);
   const history = useHistory();
   // { user } is same as useDataLayerValue.user, just destructuring the value
@@ -117,6 +118,14 @@ function App() {
             })
           })
       }
+
+      spotify.getCategories()
+        .then((categories) => {
+          dispatch({
+            type: 'SET_CATEGORIES',
+            categories: categories
+          })
+        })
       console.log(`TOKEN => ${_token}`);
   }, [])
 
@@ -132,6 +141,7 @@ function App() {
   console.log('playlist ---> ', playlists);
   console.log('followed-Artists =>', followed_artists);
   console.log('GET-ARTIST--->', artist);
+  console.log('SEARCH:--->', categories);
   // const PR = <Player spotify={spotify} />
 
 
@@ -142,6 +152,7 @@ function App() {
       } */}
       <Switch>  
           <Route exact path="/" render={() => token ? <Player spotify={spotify} /> : <Login />} />
+          <Route path="/search" render={() => token ? <Search spotify={spotify} /> : <Player spotify={spotify} />} />
           <Route path="/album/:id" render={() => token ? <Tracks /> : <Player spotify={spotify} />} />
           <Route path="/albums/:id" render={() => token ? <Tracks3 /> : <Player spotify={spotify} />} />
           <Route path="/new_releases/:id" render={() => token ? <Tracks2 /> : <Player spotify={spotify} />} />
