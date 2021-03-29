@@ -6,7 +6,10 @@ export const initialState = {
     top_artists: null,
     new_releases: null,
     released_album: null,
+    followed_artists: null,
     spotify: null,
+    artist: null,
+    // album: null,
     album01: null,
     album02: null,
     album03: null,
@@ -16,7 +19,7 @@ export const initialState = {
     album03_track: null,
     album04_track: null,
     // temporary token, remove it after development
-    // token: "BQAQBfgT_VdSHhWGOoNJAfd5vKzT8LjPCBEi2WsyA6HGXF3xjcpnzvJ-2bK4ZvGhu0ghZAYjsoZ6jLkbiSiQI9YqsRJl29_DKmzRwpprGvYMLjL6PW1vqiFpv-_DIo127pFFwnA5rJtvmH14T9tYrrIzCSNC7YDYIcLYlZTkBWCnXRtd5amE"
+    // token: "BQBW2bWQR6pQ-IWwbMLmFHARBSlGNMenGJIS9KDBiG1YZmxeGCogO9usLOWXbkF_0HsmQLMKiwQ5pjOXqAOes9b7KywlakDdnDZJsRR9dk5QyP4ZoQoF_4fmj28IZ-axhwZ_JCQu-JF6PIsrYrhnK6nChKP1rBufWdmOf-jjuqX5CSp-Gr_1"
 };
 
 const reducer = (state, action) => {
@@ -103,6 +106,21 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 released_album: action.released_album
+            }
+        case "SET_FOLLOWED_ARTISTS":
+            return {
+                ...state,
+                followed_artists: action.followed_artists
+            }
+        case "SET_ARTIST":
+            return {
+                ...state,
+                artist: action.artist
+            }
+        case "SET_ALBUMS":
+            return {
+                ...state,
+                album: action.album
             }
         default: 
             return state           

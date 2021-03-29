@@ -23,3 +23,17 @@
     font-weight: 600;
     font-size: 14.5px;  
 }
+.body__date1 {
+    /* padding-top: 10px; */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.body__date1 p {
+    color: rgb(160, 159, 159);
+    margin-top: 4px; 
+    font-weight: 600;
+    font-size: 14.5px;  
+}

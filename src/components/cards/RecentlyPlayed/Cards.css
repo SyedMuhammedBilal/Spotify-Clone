@@ -1,0 +1,101 @@
+.cardsWrap4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 75.5vw;
+    overflow: hidden;
+    height: 14rem;
+    margin-bottom: 2.5rem;
+}
+.card4 {
+    background-color: rgb(80 80 80 / 32%);
+    position: relative;
+    border-radius: 4px;
+    width: 310px;
+    height: 90px;
+    margin-bottom: 4vh;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .2), 0 10px 20px 0 rgba(0, 0, 0, .1);
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+    .cardsWrap4 {
+        height: 15rem;
+    }
+    .card4 {
+        width: 336px;
+    }
+}
+    
+
+.card4:hover {
+    background-color: rgb(167 165 165 / 20%);
+transition: 0.3s ease-in-out;
+
+}
+
+.playIcon4 {
+    overflow: hidden;
+    display: flex;
+    position: absolute;
+    right: 25px;
+    bottom: 100px;
+    padding: 0.8rem;
+    background: #1DB954;
+    width: 10px;
+    height: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    color: #fff;
+    transition: 0.2s ease-out;
+}
+.playIcon4 :hover {
+    transition: 100ms transform ease-in;
+    transform: scale(1.08);
+}
+
+@media(min-width: 800px) and (max-width: 1100px) {
+    .cardsWrap4 {
+        width: 69vw;
+    }
+}
+
+.cardContent4 {
+    padding: 1rem 0;
+    margin-top: -68px;
+    margin-left: 110px;
+}
+
+.cardContent4 h3 {
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding-bottom: 06px;
+    width: 10.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cardContent4 p {
+    color: rgb(160, 159, 159);
+    font-size: 14px;
+}
+
+.cardImage4 {
+    height: inherit;
+    width: 90px;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);    
+}
+.cardImage4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.playIcon4 {
+    color: rgb(80 80 80 / 20%);
+}
+

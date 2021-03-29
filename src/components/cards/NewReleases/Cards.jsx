@@ -25,17 +25,14 @@ const Cards = ( {spotify} ) => {
             {data?.albums?.items?.map((item) => {
                 const getAlbum = (id) => {
                     spotify.getAlbum(id).then(album => {
-                        // zayn icarus
                         console.log('check-RA--->', album);
                         dispatch({
                             type: 'SET_RELEASED_ALBUM',
-                          released_album: album
+                            released_album: album
                         })
                     })
                 }
-                const getTracks = <Track album={released_album} />
-
-
+                
                 return (
                     <Link onClick={() => getAlbum(item?.id)}  style={{textDecoration: 'none', color: '#fff'}} to={`/new_releases/${item?.id}`} >
                         <SongCard key={item?.id} artistName={item} image={item} albumName={item} /> 

@@ -2,7 +2,7 @@
     display: flex;
     height: 100rem;
     background: rgb(18,18,18);
-background: linear-gradient(360deg, rgba(18,18,18,0.9934348739495799) 60%, rgba(57,20,17,1) 80%, rgba(98,23,20,1) 100%);
+    background: linear-gradient(360deg, rgba(18,18,18,0.9934348739495799) 60%, rgba(17,57,45,1) 80%, rgba(19,87,57,1) 100%);
     background-repeat: no-repeat;
     background-size: cover;
 }   

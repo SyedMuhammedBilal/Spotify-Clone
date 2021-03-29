@@ -9,7 +9,7 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { BrowserRouter as Router, Route, Switch, Link, useParams } from 'react-router-dom';
 
-import './Tracks.scss'
+import '../NewReleases/Tracks.scss'
 
 const StyledAvatar = withStyles({
     root: {
@@ -26,16 +26,16 @@ const BorderHeart = withStyles({
     }
 })(FavoriteBorderIcon)
 
-const Tracks = ({ spotify, album }) => {
+const Tracks = ({ spotify }) => {
     // const [data, setData] = useState(null);
 
-    const [{ released_album }, dispatch] = useDataLayerValue();
+    const [{ album }, dispatch] = useDataLayerValue();
     
     const [loading, setLoading] = useState(true);
     const [minSec, setMinSec] = useState(null);
     let { id } = useParams()
     
-    console.log('chec---TTREAACKK-----', released_album);
+    console.log('chec---TTREAACKK-----', album);
 
     // const playSong = (id) => {
     //     spotify?.play({
@@ -57,7 +57,7 @@ const Tracks = ({ spotify, album }) => {
     // }
 
     
-    const data = [released_album]
+    const data = [album]
 
     if(!data)
     return (<h2> Not found </h2>);
