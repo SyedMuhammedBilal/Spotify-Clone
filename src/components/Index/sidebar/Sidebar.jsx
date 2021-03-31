@@ -22,12 +22,14 @@ const Sidebar = () => {
             <Link style={{textDecoration: 'none'}} to="/search">
                 <SidebarOptions Icon={SearchIcon} title="Search" />
             </Link>
-            <SidebarOptions Icon={LibraryIcon} title="Your Library" />
+            <Link style={{textDecoration: 'none'}} to="/collection/playlist">
+                <SidebarOptions Icon={LibraryIcon} title="Your Library" />
+            </Link>
             <br />
             <strong className="sidebar__title"> PLAYLISTS </strong>
             <hr />
 
-            {playlists?.items?.map(playlist => <SidebarOptions title={playlist.name} /> )}
+            {playlists?.items?.map(playlist => <Link style={{textDecoration: 'none', color: '#fff'}} to={`/playlist/${playlist?.id}`}><SidebarOptions title={playlist.name} /></Link>)}
         </div>
     )
 }

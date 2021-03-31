@@ -1,8 +1,8 @@
 .player__body {
     display: flex;
     height: 100rem;
-    background: rgb(18,18,18);
-    background: linear-gradient(360deg, rgba(18,18,18,0.9934348739495799) 60%, rgba(17,57,45,1) 80%, rgba(19,87,57,1) 100%);
+    background: rgb(1,0,10);
+    background: linear-gradient(0deg, rgba(1,0,10,1) 55%, rgba(70,12,17,1) 80%, rgba(131,17,33,1) 96%);
     background-repeat: no-repeat;
     background-size: cover;
 }   

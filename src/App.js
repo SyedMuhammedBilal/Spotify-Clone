@@ -8,6 +8,8 @@ import { useDataLayerValue } from './store/index';
 import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Tracks from './pages/TrackList'
 import Search from './pages/Search'
+import Playlist from './pages/Playlist'
+import LibTracks from './components/Library/LibBody'
 import Tracks2 from './components/cards/NewReleases/TrackList'
 import Tracks3 from './components/cards/RecentlyPlayed/Track'
 import NewTrackList from './components/cards/NewReleases/TrackBody'
@@ -15,7 +17,7 @@ import NewTrackList from './components/cards/NewReleases/TrackBody'
 const spotify = new SpotifyWebAPI();
 
 function App() {
-  const [{ user, token, playlists, album01, album02, album03, album04, followed_artists, artist, categories }, dispatch] = useDataLayerValue();
+  const [{ user, token, playlists, album01, album02, album03, album04, followed_artists, artist, categories, genre, liked }, dispatch] = useDataLayerValue();
   const [log, setLog] = useState(true);
   const history = useHistory();
   // { user } is same as useDataLayerValue.user, just destructuring the value
@@ -126,6 +128,15 @@ function App() {
             categories: categories
           })
         })
+
+      spotify.getUserPlaylists()
+        .then((res) => {
+        dispatch({
+          type: 'SET_GENRE',
+          genre: res
+        })
+      })
+
       console.log(`TOKEN => ${_token}`);
   }, [])
 
@@ -141,7 +152,8 @@ function App() {
   console.log('playlist ---> ', playlists);
   console.log('followed-Artists =>', followed_artists);
   console.log('GET-ARTIST--->', artist);
-  console.log('SEARCH:--->', categories);
+  console.log('SEARCH:--->', genre);
+  console.log('your liked songs--->', liked);
   // const PR = <Player spotify={spotify} />
 
 
@@ -153,10 +165,12 @@ function App() {
       <Switch>  
           <Route exact path="/" render={() => token ? <Player spotify={spotify} /> : <Login />} />
           <Route path="/search" render={() => token ? <Search spotify={spotify} /> : <Player spotify={spotify} />} />
+          <Route path="/collection/playlist" render={() => token ? <Playlist spotify={spotify} /> : <Player spotify={spotify} />} />
+          <Route path="/playlist/:id" render={() => token ? <LibTracks spotify={spotify} /> : <Player spotify={spotify} />} />
           <Route path="/album/:id" render={() => token ? <Tracks /> : <Player spotify={spotify} />} />
           <Route path="/albums/:id" render={() => token ? <Tracks3 /> : <Player spotify={spotify} />} />
-          <Route path="/new_releases/:id" render={() => token ? <Tracks2 /> : <Player spotify={spotify} />} />
           <Route path="/new_releases" render={() => token ? <NewTrackList spotify={spotify} /> : <Player spotify={spotify} />} />
+          <Route path="/new_releases/:id" render={() => token ? <Tracks2 /> : <Player spotify={spotify} />} />
           {/* <PrivateRoute exact token={token} path="/#" component={Tracks} /> */}
       </Switch>
     </Router>

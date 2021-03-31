@@ -10,6 +10,8 @@ export const initialState = {
     spotify: null,
     artist: null,
     genre: null,
+    liked: null,
+    tracks: null,
     categories: null,
     album01: null,
     album02: null,
@@ -20,7 +22,7 @@ export const initialState = {
     album03_track: null,
     album04_track: null,
     // temporary token, remove it after development
-    // token: "BQBtV2YUfwakGnYGXufvStkIe_S5aodhZR9Us33MCOVtVJpB-2uIdBzBtNCDKXvq9GLTgPdZuVlutf_0_AmeOdamSV41y59V6uWa1c11B2YdGogNvhShkJijpBdFB7wdap0S69GlW3A45Qzc-IYDAOy3Cylo44jMNEb9hU8J-LpPeWSEd2b7"
+    // token: "BQB50vlozsbJWcnTQ20oxM4phTFgS2ggNa2ILmrr5LQ2oVJo91Gq1FjFJNh0m2KWfBxEdkNjl4vWoJcpSLgD36Wi3WYhHTW1pOgLhbUWSq4e9ubHJjZycY3f_CS_Yq_IXG-In6W2yEcLRLfziQ4wGUgPjof4xbUe6EgIxaW8X8MO4W9E2YbC"
 };
 
 const reducer = (state, action) => {
@@ -132,6 +134,16 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 genre: action.genre
+            }
+        case "SET_LIKE":
+            return {
+                ...state,
+                liked: action.liked
+            }
+        case "SET_TRACKS":
+            return {
+                ...state,
+                tracks: action.tracks
             }
         default: 
             return state           
