@@ -5,7 +5,7 @@ import { ReactComponent as PlayIcon } from '../../svgs/PlayIcon.svg'
 import './Library.scss'
 
 const LibraryComponent = ({ spotify }) => {
-    const [{ genre, tracks }, dispatch] = useDataLayerValue();
+    const [{ genre }, dispatch] = useDataLayerValue();
 
     return (
         <React.Fragment>

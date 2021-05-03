@@ -27,9 +27,8 @@ const BorderHeart = withStyles({
 })(FavoriteBorderIcon)
 
 const Tracks = ({ spotify }) => {
-    // const [data, setData] = useState(null);
 
-    const [{ album }, dispatch] = useDataLayerValue();
+    const [{ album }] = useDataLayerValue();
     
     const [loading, setLoading] = useState(true);
     const [minSec, setMinSec] = useState(null);
@@ -37,26 +36,6 @@ const Tracks = ({ spotify }) => {
     
     console.log('chec---TTREAACKK-----', album);
 
-    // const playSong = (id) => {
-    //     spotify?.play({
-    //         uris: [`spotify:track:${id}`],
-    //     })
-    //     .then((res) => {
-    //         spotify.getMyCurrentPlayingTrack().then((r) => {
-    //             dispatch({
-    //                 type: "SET_ITEM",
-    //                 item: r.item,
-    //             })
-    //             console.log('rrrrrrrrrrrrrr',r);
-    //             dispatch({
-    //                 type: "SET_PLAYING",
-    //                 playing: true
-    //             })
-    //         })
-    //     })
-    // }
-
-    
     const data = [album]
 
     if(!data)
@@ -123,18 +102,6 @@ const Tracks = ({ spotify }) => {
                 )
             })}
         </React.Fragment>
-    )
-}
-
-const SongRow = ({ track, key }) => {
-    return (
-        <div className="songRow">
-            <h5> {key} </h5>
-            <div className="songRow__info">
-                <h1> {track?.name} </h1>
-                {/* <p> {track?.artists?.map((artist) => artist?.name).join(", ")} </p> */}
-            </div>
-        </div>
     )
 }
 

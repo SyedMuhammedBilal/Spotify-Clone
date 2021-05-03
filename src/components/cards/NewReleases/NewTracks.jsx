@@ -7,7 +7,6 @@ import { useDataLayerValue } from '../../../store/index'
 const NewTracks = ({ spotify }) => {
     const [{
         new_releases,
-        released_album
     }, dispatch] = useDataLayerValue();
     
     let data = new_releases

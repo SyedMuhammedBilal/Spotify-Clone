@@ -5,7 +5,6 @@ import Cards from '../../cards/Cards'
 import Cards2 from '../../cards/TopArtists/Cards'
 import Cards3 from '../../cards/NewReleases/Cards'
 import Cards1 from '../../cards/RecentlyPlayed/Cards'
-import Tracks from '../../cards/tracks/Tracks'
 import './Body.css'
 
 const Body = ({ spotify }) => {
@@ -46,7 +45,7 @@ const Body = ({ spotify }) => {
                         <p> Brand new music from artists you love.</p>
                     </div>
                     <div>
-                        <p> <Link style={{textDecoration: 'none', color: 'rgb(160, 159, 159)'}} to="/new_releases">See More</Link></p>
+                        <p> <Link style={{textDecoration: 'none', color: 'rgb(160, 159, 159)'}} to="/new_release">See More</Link></p>
                     </div>
                 </div> 
                 <Cards3 spotify={spotify} />

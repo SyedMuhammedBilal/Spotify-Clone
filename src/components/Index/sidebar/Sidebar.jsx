@@ -1,9 +1,6 @@
 import React from 'react'
 import './Sidebar.css'
 import SidebarOptions from './options/SidebarOptions'
-// import HomeIcon from "@material-ui/icons/Home";
-// import SearchIcon from "@material-ui/icons/Search";
-// import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import { Link } from 'react-router-dom'
 import { useDataLayerValue } from '../../../store/index'
 import { ReactComponent as HomeIcon } from '../../../svgs/home.svg'

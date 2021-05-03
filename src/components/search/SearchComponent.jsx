@@ -3,7 +3,7 @@ import { useDataLayerValue } from '../../store/index'
 import './Search.scss'
 
 const SearchComponent = () => {
-    const [{ categories }, dispatch] = useDataLayerValue();
+    const [{ categories }] = useDataLayerValue();
     console.log('pop=seartches=====>>>>', categories);
     
     return (

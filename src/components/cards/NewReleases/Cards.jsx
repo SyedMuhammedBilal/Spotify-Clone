@@ -1,27 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './Cards.scss'
 import { useDataLayerValue } from '../../../store/index'
-import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
-import { withStyles } from '@material-ui/core/styles';
 import { ReactComponent as PlayIcon } from '../../../svgs/PlayIcon.svg'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Track from './Tracks'
+import { Link } from 'react-router-dom';
 
 const Cards = ( {spotify} ) => {
     const [{
         new_releases,
-        released_album
     }, dispatch] = useDataLayerValue();
     
     let data = new_releases
-    console.log('newnewnew ==--==--==--',data);
-    // console.log('phatphatphat', released_album);
+    console.log(data);
 
     return (
         <>
-           <div className="cardsWrap3">
-            {/* {console.log(JSON.stringify([recentlyPlayed.items])) */}
-            
+           <div className="cardsWrap3">            
             {data?.albums?.items?.map((item) => {
                 const getAlbum = (id) => {
                     spotify.getAlbum(id).then(album => {

@@ -1,6 +1,5 @@
 import React from 'react'
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
-import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
 import VolumeDownIcon from "@material-ui/icons/VolumeDown";
 import RepeatIcon from "@material-ui/icons/Repeat";
 import ShuffleIcon from "@material-ui/icons/Shuffle";
@@ -11,7 +10,6 @@ import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import DevicesIcon from '@material-ui/icons/Devices';
 import { Grid, Slider } from "@material-ui/core";
-import Playback from './Playback'
 import './Footer.css'
 
 const Footer = ({ spotify }) => {

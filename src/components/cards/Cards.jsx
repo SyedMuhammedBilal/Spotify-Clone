@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './Cards.scss'
 import { useDataLayerValue } from '../../store/index'
-import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
-import { withStyles } from '@material-ui/core/styles';
 import { ReactComponent as PlayIcon } from '../../svgs/PlayIcon.svg'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Cards = () => {
     const [{
@@ -12,15 +10,14 @@ const Cards = () => {
         album02, 
         album03, 
         album04
-    }, dispatch] = useDataLayerValue();
+    }] = useDataLayerValue();
     
     let data = [album01, album02, album03, album04]
-    console.log('data ==--==--==--',data);
+    
     return (
         <>
            <div className="cardsWrap">
-            {/* {console.log(JSON.stringify([recentlyPlayed.items])) */}
-            
+        
             {data?.map((dat) => {
                 return (
                     <Link style={{textDecoration: 'none', color: '#fff'}} to={`/album/${dat?.id}`} >

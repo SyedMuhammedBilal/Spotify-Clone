@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Avatar } from "@material-ui/core";
 import { withStyles } from '@material-ui/core/styles';
 import { useDataLayerValue } from '../../store/index'
-import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { ReactComponent as PlayIcon } from '../../svgs/PlayIcon.svg'
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import { BrowserRouter as Router, Route, Switch, Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import moment from 'moment'
 
 import './LibTrack.scss'
@@ -28,35 +27,13 @@ const BorderHeart = withStyles({
 })(FavoriteBorderIcon)
 
 const Tracks = ({ spotify, album }) => {
-    // const [data, setData] = useState(null);
-
-    const [{ tracks }, dispatch] = useDataLayerValue();
+    const [{ tracks }] = useDataLayerValue();
     
     const [loading, setLoading] = useState(true);
     const [minSec, setMinSec] = useState(null);
     let { id } = useParams()
     
     console.log('TTREAACKK-----', tracks);
-
-    // const playSong = (id) => {
-    //     spotify?.play({
-    //         uris: [`spotify:track:${id}`],
-    //     })
-    //     .then((res) => {
-    //         spotify.getMyCurrentPlayingTrack().then((r) => {
-    //             dispatch({
-    //                 type: "SET_ITEM",
-    //                 item: r.item,
-    //             })
-    //             console.log('rrrrrrrrrrrrrr',r);
-    //             dispatch({
-    //                 type: "SET_PLAYING",
-    //                 playing: true
-    //             })
-    //         })
-    //     })
-    // }
-
     
     const data = [tracks]
 
