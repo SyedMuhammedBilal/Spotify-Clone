@@ -13,7 +13,7 @@ import Tracks2 from './components/cards/NewReleases/TrackList'
 import Tracks3 from './components/cards/RecentlyPlayed/Track'
 import NewTrackList from './components/cards/NewReleases/TrackBody'
 
-const spotify = new SpotifyWebAPI();
+const spotify = new SpotifyWebAPI()
 
 function App() {
   const [{ user, token, followed_artists }, dispatch] = useDataLayerValue();

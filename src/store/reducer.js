@@ -21,6 +21,7 @@ export const initialState = {
     album02_track: null,
     album03_track: null,
     album04_track: null,
+    token: null,
     // temporary token, remove it after development
     // token: "BQB50vlozsbJWcnTQ20oxM4phTFgS2ggNa2ILmrr5LQ2oVJo91Gq1FjFJNh0m2KWfBxEdkNjl4vWoJcpSLgD36Wi3WYhHTW1pOgLhbUWSq4e9ubHJjZycY3f_CS_Yq_IXG-In6W2yEcLRLfziQ4wGUgPjof4xbUe6EgIxaW8X8MO4W9E2YbC"
 };
