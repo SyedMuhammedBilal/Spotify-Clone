@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Login from './components/Auth/Login'
 import { getTokenFromURL } from './API/SpotifyAuth'
 import Player from './components/Index/Player'
@@ -123,6 +123,7 @@ function App() {
       })
 
       console.log(`TOKEN => ${_token}`);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   console.log('user --->', user);
