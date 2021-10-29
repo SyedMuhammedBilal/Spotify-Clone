@@ -12,13 +12,9 @@ const Cards = () => {
     }, dispatch] = useDataLayerValue();
     
     let data = top_artists
-    console.log('datatatoptoptoo===?????', data);
-    console.log('data ==--==--==--',data);
     return (
         <>
            <div className="cardsWrap2">
-            {/* {console.log(JSON.stringify([recentlyPlayed.items])) */}
-            
             {data?.items?.map((dat) => {
                 return (
                     <Link style={{textDecoration: 'none', color: '#fff'}} to={`/album/${dat?.id}`} >
