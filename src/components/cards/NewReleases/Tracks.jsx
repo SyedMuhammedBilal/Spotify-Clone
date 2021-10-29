@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import { Avatar } from "@material-ui/core";
 import { withStyles } from '@material-ui/core/styles';

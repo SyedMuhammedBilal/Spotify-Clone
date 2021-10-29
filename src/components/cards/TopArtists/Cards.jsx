@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import './Cards.scss'
 import { useDataLayerValue } from '../../../store/index'

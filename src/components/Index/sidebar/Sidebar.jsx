@@ -8,7 +8,7 @@ import { ReactComponent as SearchIcon } from '../../../svgs/search.svg'
 import { ReactComponent as LibraryIcon } from '../../../svgs/library.svg'
 
 const Sidebar = () => {
-    const [{ playlists }, dispatch] = useDataLayerValue();
+    const [{ playlists }] = useDataLayerValue();
 
     return (
         <div className="sidebar">
